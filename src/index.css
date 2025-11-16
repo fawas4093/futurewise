@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Color Palette: C64304, FBE2A9, F5BE71, B26F18, F16B05 */
+    --background: 40 92% 95%;
+    --foreground: 18 96% 20%;
+
+    --card: 40 92% 98%;
+    --card-foreground: 18 96% 20%;
+
+    --popover: 40 92% 98%;
+    --popover-foreground: 18 96% 20%;
+
+    /* Primary: F16B05 (Bright Orange) */
+    --primary: 20 96% 48%;
+    --primary-foreground: 0 0% 100%;
+    
+    --primary-glow: 20 96% 55%;
+
+    /* Secondary: F5BE71 (Light Orange/Peach) */
+    --secondary: 33 87% 70%;
+    --secondary-foreground: 18 96% 20%;
+
+    /* Muted: FBE2A9 (Light Cream/Beige) */
+    --muted: 40 92% 88%;
+    --muted-foreground: 18 96% 30%;
+
+    /* Accent: B26F18 (Brown/Orange) */
+    --accent: 30 76% 40%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 33 50% 80%;
+    --input: 33 50% 80%;
+    --ring: 20 96% 48%;
+
+    --radius: 0.75rem;
+
+    /* Gradients using the new palette */
+    --gradient-hero: linear-gradient(135deg, hsl(20 96% 48%), hsl(33 87% 70%));
+    --gradient-card: linear-gradient(180deg, hsl(40 92% 98%), hsl(40 92% 95%));
+    --gradient-accent: linear-gradient(135deg, hsl(20 96% 48%), hsl(30 76% 40%));
+    
+    /* Shadows */
+    --shadow-glow: 0 0 40px hsl(20 96% 48% / 0.4);
+    --shadow-soft: 0 10px 30px -10px hsl(18 96% 15% / 0.1);
+    --shadow-card: 0 4px 20px hsl(18 96% 15% / 0.08);
+
+    /* Sidebar tokens - using orange palette */
+    --sidebar-background: 40 92% 98%;
+    --sidebar-foreground: 18 96% 20%;
+    --sidebar-primary: 20 96% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 33 87% 70%;
+    --sidebar-accent-foreground: 18 96% 20%;
+    --sidebar-border: 33 50% 80%;
+    --sidebar-ring: 20 96% 48%;
+  }
+
+  .dark {
+    /* Dark mode with orange palette */
+    --background: 18 96% 8%;
+    --foreground: 40 92% 95%;
+
+    --card: 18 96% 12%;
+    --card-foreground: 40 92% 95%;
+
+    --popover: 18 96% 12%;
+    --popover-foreground: 40 92% 95%;
+
+    /* Primary: F16B05 (Bright Orange) - slightly brighter in dark mode */
+    --primary: 20 96% 55%;
+    --primary-foreground: 0 0% 100%;
+    
+    --primary-glow: 20 96% 60%;
+
+    /* Secondary: F5BE71 (Light Orange/Peach) */
+    --secondary: 33 87% 65%;
+    --secondary-foreground: 18 96% 8%;
+
+    /* Muted: Darker version of cream */
+    --muted: 18 50% 18%;
+    --muted-foreground: 40 50% 75%;
+
+    /* Accent: B26F18 (Brown/Orange) */
+    --accent: 30 76% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 30 30% 25%;
+    --input: 30 30% 25%;
+    --ring: 20 96% 55%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(20 96% 55%), hsl(33 87% 65%));
+    --gradient-card: linear-gradient(180deg, hsl(18 96% 12%), hsl(18 96% 8%));
+    --gradient-accent: linear-gradient(135deg, hsl(20 96% 55%), hsl(30 76% 50%));
+    
+    /* Shadows */
+    --shadow-glow: 0 0 50px hsl(20 96% 55% / 0.5);
+    --shadow-soft: 0 10px 30px -10px hsl(0 0% 0% / 0.3);
+    --shadow-card: 0 4px 20px hsl(0 0% 0% / 0.2);
+
+    /* Sidebar tokens - using orange palette */
+    --sidebar-background: 18 96% 12%;
+    --sidebar-foreground: 40 92% 95%;
+    --sidebar-primary: 20 96% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 30 76% 50%;
+    --sidebar-accent-foreground: 40 92% 95%;
+    --sidebar-border: 30 30% 25%;
+    --sidebar-ring: 20 96% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
