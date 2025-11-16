@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import About from "./pages/About";
 import Xskills from "./pages/Xskills";
 import Connectly from "./pages/Connectly";
+import DevStudio from "./pages/DevStudio";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -21,6 +22,7 @@ const App = () => (
           <Route path="/" element={<About />} />
           <Route path="/xskills" element={<Xskills />} />
           <Route path="/connectly" element={<Connectly />} />
+          <Route path="/devstudio" element={<DevStudio />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

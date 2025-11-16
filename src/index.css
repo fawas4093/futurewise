@@ -132,4 +132,91 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground;
   }
+
+  /* XSkills Page Color Palette */
+  /* Colors: #001D39, #0A4174 (primary), #49769F, #4E8EA2, #6EA2B3, #7BBDE8, #BDD8E9 */
+  .xskills-page {
+    /* Primary: #0A4174 */
+    --primary: 207 85% 25%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 207 85% 30%;
+    
+    /* Secondary: #49769F */
+    --secondary: 207 38% 45%;
+    --secondary-foreground: 0 0% 100%;
+    
+    /* Accent: #4E8EA2 */
+    --accent: 195 36% 47%;
+    --accent-foreground: 0 0% 100%;
+    
+    /* Background: #BDD8E9 (lightest) */
+    --background: 201 50% 95%;
+    --foreground: 207 100% 11%;
+    
+    /* Card: #BDD8E9 with slight variation */
+    --card: 201 50% 98%;
+    --card-foreground: 207 100% 11%;
+    
+    /* Muted: #6EA2B3 */
+    --muted: 195 33% 85%;
+    --muted-foreground: 207 85% 25%;
+    
+    /* Border: #7BBDE8 */
+    --border: 201 70% 75%;
+    --input: 201 70% 75%;
+    --ring: 207 85% 25%;
+    
+    /* Gradients using the new blue palette */
+    --gradient-hero: linear-gradient(135deg, hsl(207 85% 25%), hsl(195 36% 47%), hsl(201 70% 71%));
+    --gradient-card: linear-gradient(180deg, hsl(201 50% 98%), hsl(201 50% 95%));
+    --gradient-accent: linear-gradient(135deg, hsl(207 85% 25%), hsl(207 38% 45%), hsl(195 36% 47%));
+    
+    /* Shadows */
+    --shadow-glow: 0 0 40px hsl(207 85% 25% / 0.4);
+    --shadow-soft: 0 10px 30px -10px hsl(207 100% 11% / 0.1);
+    --shadow-card: 0 4px 20px hsl(207 100% 11% / 0.08);
+  }
+
+  /* DevStudio Page Color Palette */
+  /* Colors: #6E8649 (Reseda Green), #477023 (Fern Green), #2D531A (Dark Moss - primary), #0D330E (Pakistan Green), #071E07 (Dark Green) */
+  .devstudio-page {
+    /* Primary: #2D531A (Dark Moss) */
+    --primary: 87 52% 21%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 87 52% 26%;
+    
+    /* Secondary: #477023 (Fern Green) */
+    --secondary: 87 52% 29%;
+    --secondary-foreground: 0 0% 100%;
+    
+    /* Accent: #6E8649 (Reseda Green) */
+    --accent: 87 30% 41%;
+    --accent-foreground: 0 0% 100%;
+    
+    /* Background: Light version of Reseda Green */
+    --background: 87 30% 96%;
+    --foreground: 122 60% 7%;
+    
+    /* Card: Light background */
+    --card: 87 30% 98%;
+    --card-foreground: 122 60% 7%;
+    
+    /* Muted: Light Reseda Green */
+    --muted: 87 30% 88%;
+    --muted-foreground: 87 52% 21%;
+    
+    /* Border: Reseda Green */
+    --border: 87 30% 75%;
+    --input: 87 30% 75%;
+    --ring: 87 52% 21%;
+    
+    /* Gradients using the new green palette */
+    --gradient-card: linear-gradient(180deg, hsl(87 30% 98%), hsl(87 30% 96%));
+    --gradient-accent: linear-gradient(135deg, hsl(87 52% 21%), hsl(87 52% 29%), hsl(87 30% 41%));
+    
+    /* Shadows */
+    --shadow-glow: 0 0 40px hsl(87 52% 21% / 0.4);
+    --shadow-soft: 0 10px 30px -10px hsl(122 60% 7% / 0.1);
+    --shadow-card: 0 4px 20px hsl(122 60% 7% / 0.08);
+  }
 }

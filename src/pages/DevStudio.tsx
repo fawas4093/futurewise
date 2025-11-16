@@ -8,7 +8,7 @@ import { Sparkles, Rocket, Trophy, BarChart3, Box, Cpu, Code, CheckCircle2, Awar
 import { Link } from "react-router-dom";
 import { fadeInUp, staggerContainer, staggerItem } from "@/lib/animations";
 
-const Xskills = () => {
+const DevStudio = () => {
   const mentorshipTracks = [
     {
       icon: Sparkles,
@@ -67,7 +67,7 @@ const Xskills = () => {
     },
   ];
 
-  const whyXskills = [
+  const whyDevStudio = [
     {
       icon: CheckCircle2,
       title: "Hands-on, Practical Training",
@@ -91,11 +91,11 @@ const Xskills = () => {
   ];
 
   return (
-    <div className="min-h-screen xskills-page">
+    <div className="min-h-screen devstudio-page">
       <Navigation />
       
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-hero" style={{ background: 'linear-gradient(135deg, #0A4174 0%, #4E8EA2 50%, #7BBDE8 100%)' }}>
+      {/* Hero Section - No Gradient */}
+      <section className="relative min-h-screen flex items-center overflow-hidden" style={{ backgroundColor: '#2D531A' }}>
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(255,255,255,0.15),transparent_50%),radial-gradient(ellipse_at_bottom_left,rgba(255,255,255,0.1),transparent_50%)]" />
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS1vcGFjaXR5PSIwLjA1IiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-20" />
         
@@ -115,15 +115,15 @@ const Xskills = () => {
                 animate={{ scale: [1, 1.2, 1] }}
                 transition={{ duration: 2, repeat: Infinity }}
               />
-              <span className="text-white text-sm font-medium">Xskills by FutureWise Edventures</span>
+              <span className="text-white text-sm font-medium">DevStudio by FutureWise Edventures</span>
             </motion.div>
             
             <motion.h1 
               className="text-6xl md:text-8xl font-bold text-white mb-8 leading-none tracking-tight"
               variants={fadeInUp}
             >
-              Upskill the<br />
-              <span className="bg-gradient-to-r from-white via-white/90 to-white/70 bg-clip-text text-transparent">
+              Build the<br />
+              <span className="text-white">
                 Future
               </span>
             </motion.h1>
@@ -167,7 +167,7 @@ const Xskills = () => {
               transition={{ duration: 0.6 }}
             >
               <div className="inline-block px-3 py-1 bg-primary/10 text-primary rounded-lg text-xs font-bold uppercase tracking-wider">
-                About Xskills
+                About DevStudio
               </div>
               <h2 className="text-5xl md:text-6xl font-bold text-foreground leading-tight">
                 Your Gateway to Professional Excellence
@@ -181,7 +181,7 @@ const Xskills = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Xskills is the dedicated skill-development division of FutureWise Edventures, focused on transforming learners into job-ready professionals through real-world learning experiences and industry-aligned training.
+                DevStudio is the dedicated skill-development division of FutureWise Edventures, focused on transforming learners into job-ready professionals through real-world learning experiences and industry-aligned training.
               </p>
             </motion.div>
           </div>
@@ -221,7 +221,7 @@ const Xskills = () => {
               >
                 <motion.div 
                   className="absolute inset-0 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                  style={{ background: 'linear-gradient(135deg, rgba(10, 65, 116, 0.2), rgba(73, 118, 159, 0.2), rgba(78, 142, 162, 0.2))' }}
+                  style={{ background: 'linear-gradient(135deg, rgba(45, 83, 26, 0.2), rgba(71, 112, 35, 0.2), rgba(110, 134, 73, 0.2))' }}
                   whileHover={{ opacity: 1 }}
                 />
                 <Card className="relative bg-card/80 backdrop-blur-sm border-border h-full">
@@ -301,7 +301,7 @@ const Xskills = () => {
                     <CardHeader>
                       <motion.div 
                         className={`${programme.color} w-14 h-14 rounded-2xl flex items-center justify-center mb-6`}
-                        style={{ background: 'linear-gradient(135deg, rgba(10, 65, 116, 0.1), rgba(73, 118, 159, 0.1))' }}
+                        style={{ background: 'linear-gradient(135deg, rgba(45, 83, 26, 0.1), rgba(71, 112, 35, 0.1))' }}
                         whileHover={{ rotate: 360, scale: 1.1 }}
                         transition={{ duration: 0.6 }}
                       >
@@ -325,7 +325,7 @@ const Xskills = () => {
         </div>
       </section>
 
-      {/* Why Xskills Section */}
+      {/* Why DevStudio Section */}
       <section className="py-32 bg-muted/30">
         <div className="container mx-auto px-4">
           <motion.div 
@@ -336,7 +336,7 @@ const Xskills = () => {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
-              Why Choose Xskills?
+              Why Choose DevStudio?
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               We don't just teach — we transform
@@ -350,7 +350,7 @@ const Xskills = () => {
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
           >
-            {whyXskills.map((reason, index) => (
+            {whyDevStudio.map((reason, index) => (
               <motion.div
                 key={index}
                 className="group bg-card/50 backdrop-blur-sm p-8 rounded-2xl border border-border text-center"
@@ -360,7 +360,7 @@ const Xskills = () => {
               >
                 <motion.div 
                   className="text-primary w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6"
-                  style={{ background: 'linear-gradient(135deg, rgba(10, 65, 116, 0.1), rgba(73, 118, 159, 0.1))' }}
+                  style={{ background: 'linear-gradient(135deg, rgba(45, 83, 26, 0.1), rgba(71, 112, 35, 0.1))' }}
                   whileHover={{ rotate: 360, scale: 1.1 }}
                   transition={{ duration: 0.6 }}
                 >
@@ -377,7 +377,7 @@ const Xskills = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-32 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #0A4174 0%, #49769F 50%, #4E8EA2 100%)' }}>
+      <section className="py-32 relative overflow-hidden" style={{ backgroundColor: '#2D531A' }}>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,rgba(255,255,255,0.2),transparent_50%),radial-gradient(circle_at_80%_80%,rgba(255,255,255,0.15),transparent_50%)]" />
         <div className="container mx-auto px-4 relative z-10">
           <motion.div 
@@ -391,7 +391,7 @@ const Xskills = () => {
               Start Learning<br />Today
             </h2>
             <p className="text-xl md:text-2xl text-white/90 mb-12 leading-relaxed">
-              Your future deserves the best preparation. Join Xskills and transform your potential into professional excellence.
+              Your future deserves the best preparation. Join DevStudio and transform your potential into professional excellence.
             </p>
             <motion.div 
               className="flex flex-wrap gap-4 justify-center"
@@ -436,4 +436,5 @@ const Xskills = () => {
   );
 };
 
-export default Xskills;
+export default DevStudio;
+
