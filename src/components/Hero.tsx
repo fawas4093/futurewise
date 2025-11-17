@@ -29,7 +29,7 @@ const Hero = () => {
           alt="FutureWise Edventures"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/80 to-background"></div>
+        <div className="absolute inset-0 bg-background/90"></div>
       </motion.div>
 
       {/* Content */}

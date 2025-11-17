@@ -25,6 +25,25 @@ const Navigation = () => {
     { name: "Connectly", path: "/connectly" },
   ];
 
+  // Determine which logo to use based on current route
+  const getLogoPath = () => {
+    if (location.pathname === "/xskills") {
+      return new URL("../assets/xskill_logo.png", import.meta.url).href;
+    } else if (location.pathname === "/devstudio") {
+      return new URL("../assets/devstudio_logo.png", import.meta.url).href;
+    }
+    return new URL("../assets/logo.png", import.meta.url).href;
+  };
+
+  const getLogoAlt = () => {
+    if (location.pathname === "/xskills") {
+      return "Xskills by FutureWise Edventures";
+    } else if (location.pathname === "/devstudio") {
+      return "DevStudio by FutureWise Edventures";
+    }
+    return "FutureWise Edventures";
+  };
+
   return (
     <motion.nav
       className={`fixed top-0 left-0 right-0 z-50 ${
@@ -44,9 +63,10 @@ const Navigation = () => {
           >
             <Link to="/" className="flex items-center space-x-3">
               <img 
-                src={new URL("../assets/logo.png", import.meta.url).href} 
-                alt="FutureWise Edventures" 
-                className="h-10 w-10 object-contain"
+                src={getLogoPath()} 
+                alt={getLogoAlt()} 
+                className="h-10 w-10 max-h-10 max-w-10 object-contain"
+                style={{ width: '2.5rem', height: '2.5rem' }}
               />
               <span className="text-xl font-bold text-foreground">
                 FutureWise Edventures
