@@ -65,8 +65,15 @@ const Navigation = () => {
               <img 
                 src={getLogoPath()} 
                 alt={getLogoAlt()} 
-                className="h-10 w-10 max-h-10 max-w-10 object-contain"
-                style={{ width: '2.5rem', height: '2.5rem' }}
+                className={`object-contain ${
+                  location.pathname === "/xskills" || location.pathname === "/devstudio"
+                    ? "h-12 w-12 max-h-12 max-w-12"
+                    : "h-10 w-10 max-h-10 max-w-10"
+                }`}
+                style={location.pathname === "/xskills" || location.pathname === "/devstudio"
+                  ? { width: '3rem', height: '3rem' }
+                  : { width: '2.5rem', height: '2.5rem' }
+                }
               />
               <span className="text-xl font-bold text-foreground">
                 FutureWise Edventures

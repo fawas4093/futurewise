@@ -14,31 +14,31 @@ const Connectly = () => {
       icon: Users2,
       title: "Cross-College Collaboration",
       description: "Connect and work with talented students from different colleges across the nation.",
-      gradient: "from-primary to-secondary",
+      gradient: "from-[#8F0B13] to-[#EFDFC5]",
     },
     {
       icon: Briefcase,
       title: "Real Company Contracts",
       description: "Gain hands-on experience through paid or credited projects from actual companies.",
-      gradient: "from-secondary to-accent",
+      gradient: "from-[#EFDFC5] to-[#8F0B13]",
     },
     {
       icon: FolderKanban,
       title: "Project Marketplace",
       description: "Join exciting projects or post your own ideas and build with a diverse team.",
-      gradient: "from-accent to-primary",
+      gradient: "from-[#8F0B13] to-[#EFDFC5]",
     },
     {
       icon: Trophy,
       title: "Innovation Challenges & Hackathons",
       description: "Compete, learn, showcase your skills, and get noticed by top recruiters.",
-      gradient: "from-primary to-secondary",
+      gradient: "from-[#EFDFC5] to-[#8F0B13]",
     },
     {
       icon: TrendingUp,
       title: "Portfolio & Exposure",
       description: "Build tangible proof of your teamwork, skills, and real-world impact.",
-      gradient: "from-secondary to-accent",
+      gradient: "from-[#8F0B13] to-[#EFDFC5]",
     },
   ];
 
@@ -65,7 +65,7 @@ const Connectly = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center overflow-hidden bg-primary">
+      <section className="relative min-h-screen flex items-center overflow-hidden" style={{ backgroundColor: '#8F0B13' }}>
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(255,255,255,0.15),transparent_50%),radial-gradient(ellipse_at_bottom_left,rgba(255,255,255,0.1),transparent_50%)]" />
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS1vcGFjaXR5PSIwLjA1IiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-20" />
         
@@ -113,7 +113,8 @@ const Connectly = () => {
               >
                 <Button 
                   size="lg" 
-                  className="bg-white text-primary hover:bg-white/90 shadow-2xl h-14 px-8 text-base font-semibold"
+                  className="bg-white hover:bg-white/90 shadow-2xl h-14 px-8 text-base font-semibold"
+                  style={{ color: '#8F0B13' }}
                   disabled
                 >
                   Coming Soon
@@ -137,7 +138,7 @@ const Connectly = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <div className="inline-block px-3 py-1 bg-primary/10 text-primary rounded-lg text-xs font-bold uppercase tracking-wider">
+              <div className="inline-block px-3 py-1 rounded-lg text-xs font-bold uppercase tracking-wider" style={{ backgroundColor: 'rgba(143, 11, 19, 0.1)', color: '#8F0B13' }}>
                 About Connectly
               </div>
               <h2 className="text-5xl md:text-6xl font-bold text-foreground leading-tight">
@@ -237,18 +238,20 @@ const Connectly = () => {
           >
             <motion.div className="group relative" variants={staggerItem}>
               <motion.div 
-                className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl blur-xl opacity-0"
+                className="absolute inset-0 rounded-2xl blur-xl opacity-0"
+                style={{ background: 'linear-gradient(to bottom right, rgba(143, 11, 19, 0.2), rgba(239, 223, 197, 0.2))' }}
                 whileHover={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}
               />
-              <Card className="relative bg-gradient-to-br from-primary/5 to-secondary/5 border-primary/20 h-full backdrop-blur-sm">
+              <Card className="relative h-full backdrop-blur-sm border-2" style={{ background: 'linear-gradient(to bottom right, rgba(143, 11, 19, 0.05), rgba(239, 223, 197, 0.05))', borderColor: 'rgba(143, 11, 19, 0.2)' }}>
                 <motion.div
                   whileHover={{ y: -5, scale: 1.02 }}
                   transition={{ duration: 0.3 }}
                 >
                   <CardHeader>
                     <motion.div 
-                      className="bg-gradient-to-br from-primary to-secondary p-4 w-14 h-14 rounded-2xl flex items-center justify-center mb-6"
+                      className="p-4 w-14 h-14 rounded-2xl flex items-center justify-center mb-6"
+                      style={{ background: 'linear-gradient(to bottom right, #8F0B13, #EFDFC5)' }}
                       whileHover={{ rotate: 360, scale: 1.1 }}
                       transition={{ duration: 0.6 }}
                     >
@@ -264,7 +267,7 @@ const Connectly = () => {
                       {forStudents.map((benefit, idx) => (
                         <li key={idx} className="flex items-start gap-3">
                           <div className="mt-1">
-                            <Zap className="h-4 w-4 text-primary" />
+                            <Zap className="h-4 w-4" style={{ color: '#8F0B13' }} />
                           </div>
                           <span className="text-sm text-muted-foreground leading-relaxed">{benefit}</span>
                         </li>
@@ -277,18 +280,20 @@ const Connectly = () => {
 
             <motion.div className="group relative" variants={staggerItem}>
               <motion.div 
-                className="absolute inset-0 bg-gradient-to-br from-accent/20 to-primary/20 rounded-2xl blur-xl opacity-0"
+                className="absolute inset-0 rounded-2xl blur-xl opacity-0"
+                style={{ background: 'linear-gradient(to bottom right, rgba(239, 223, 197, 0.2), rgba(143, 11, 19, 0.2))' }}
                 whileHover={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}
               />
-              <Card className="relative bg-gradient-to-br from-accent/5 to-primary/5 border-accent/20 h-full backdrop-blur-sm">
+              <Card className="relative h-full backdrop-blur-sm border-2" style={{ background: 'linear-gradient(to bottom right, rgba(239, 223, 197, 0.05), rgba(143, 11, 19, 0.05))', borderColor: 'rgba(239, 223, 197, 0.2)' }}>
                 <motion.div
                   whileHover={{ y: -5, scale: 1.02 }}
                   transition={{ duration: 0.3 }}
                 >
                   <CardHeader>
                     <motion.div 
-                      className="bg-gradient-to-br from-accent to-primary p-4 w-14 h-14 rounded-2xl flex items-center justify-center mb-6"
+                      className="p-4 w-14 h-14 rounded-2xl flex items-center justify-center mb-6"
+                      style={{ background: 'linear-gradient(to bottom right, #EFDFC5, #8F0B13)' }}
                       whileHover={{ rotate: 360, scale: 1.1 }}
                       transition={{ duration: 0.6 }}
                     >
@@ -304,7 +309,7 @@ const Connectly = () => {
                       {forPartners.map((benefit, idx) => (
                         <li key={idx} className="flex items-start gap-3">
                           <div className="mt-1">
-                            <Zap className="h-4 w-4 text-accent" />
+                            <Zap className="h-4 w-4" style={{ color: '#EFDFC5' }} />
                           </div>
                           <span className="text-sm text-muted-foreground leading-relaxed">{benefit}</span>
                         </li>
@@ -328,7 +333,8 @@ const Connectly = () => {
             >
               <Button 
                 size="lg"
-                className="h-14 px-12 text-base font-semibold shadow-lg hover:shadow-xl transition-shadow" 
+                className="h-14 px-12 text-base font-semibold shadow-lg hover:shadow-xl transition-shadow text-white" 
+                style={{ backgroundColor: '#8F0B13' }}
                 onClick={() => window.open('https://wa.me/917034365083', '_blank')}
               >
                 Accepting Early Collaboration & Partnership
@@ -340,7 +346,7 @@ const Connectly = () => {
 
 
       {/* CTA Section */}
-      <section className="py-32 bg-gradient-accent relative overflow-hidden">
+      <section className="py-32 relative overflow-hidden" style={{ backgroundColor: '#8F0B13' }}>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,rgba(255,255,255,0.2),transparent_50%),radial-gradient(circle_at_80%_80%,rgba(255,255,255,0.15),transparent_50%)]" />
         <div className="container mx-auto px-4 relative z-10">
           <motion.div 
@@ -370,7 +376,8 @@ const Connectly = () => {
                 >
                   <Button 
                     size="lg" 
-                    className="bg-white text-primary hover:bg-white/90 shadow-2xl h-14 px-8 text-base font-semibold"
+                    className="bg-white hover:bg-white/90 shadow-2xl h-14 px-8 text-base font-semibold"
+                    style={{ color: '#8F0B13' }}
                     onClick={() => window.open('https://wa.me/917034365083', '_blank')}
                   >
                     Join Now
