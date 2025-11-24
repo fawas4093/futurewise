@@ -27,19 +27,25 @@ const Navigation = () => {
 
   // Determine which logo to use based on current route
   const getLogoPath = () => {
-    if (location.pathname === "/xskills") {
-      return new URL("../assets/xskill_logo.png", import.meta.url).href;
-    } else if (location.pathname === "/devstudio") {
-      return new URL("../assets/devstudio_logo.png", import.meta.url).href;
+    const path = location.pathname.toLowerCase();
+    if (path === "/xskills" || path === "/xskills/") {
+      return new URL("../assets/fawa xskill.png", import.meta.url).href;
+    } else if (path === "/devstudio" || path === "/devstudio/") {
+      return new URL("../assets/fawa devstudio.png", import.meta.url).href;
+    } else if (path === "/connectly" || path === "/connectly/") {
+      return new URL("../assets/fawa connectly.png", import.meta.url).href;
     }
-    return new URL("../assets/logo.png", import.meta.url).href;
+    return new URL("../assets/fawa home.png", import.meta.url).href;
   };
 
   const getLogoAlt = () => {
-    if (location.pathname === "/xskills") {
+    const path = location.pathname.toLowerCase();
+    if (path === "/xskills" || path === "/xskills/") {
       return "Xskills by FutureWise Edventures";
-    } else if (location.pathname === "/devstudio") {
+    } else if (path === "/devstudio" || path === "/devstudio/") {
       return "DevStudio by FutureWise Edventures";
+    } else if (path === "/connectly" || path === "/connectly/") {
+      return "Connectly by FutureWise Edventures";
     }
     return "FutureWise Edventures";
   };
@@ -65,15 +71,8 @@ const Navigation = () => {
               <img 
                 src={getLogoPath()} 
                 alt={getLogoAlt()} 
-                className={`object-contain ${
-                  location.pathname === "/xskills" || location.pathname === "/devstudio"
-                    ? "h-12 w-12 max-h-12 max-w-12"
-                    : "h-10 w-10 max-h-10 max-w-10"
-                }`}
-                style={location.pathname === "/xskills" || location.pathname === "/devstudio"
-                  ? { width: '3rem', height: '3rem' }
-                  : { width: '2.5rem', height: '2.5rem' }
-                }
+                className="object-contain h-16 w-16 max-h-16 max-w-16"
+                style={{ width: '4rem', height: '4rem' }}
               />
               <span className="text-xl font-bold text-foreground">
                 FutureWise Edventures

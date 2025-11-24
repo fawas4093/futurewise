@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { QrCode, ArrowRight } from "lucide-react";
-import heroImage from "@/assets/hero-bg.jpg";
 import { fadeInUp, staggerContainer } from "@/lib/animations";
+import Silk from "./Silk";
 
 const Hero = () => {
   const scrollToSection = (id: string) => {
@@ -17,20 +17,17 @@ const Hero = () => {
       id="home"
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
     >
-      {/* Background Image with Overlay */}
-      <motion.div 
-        className="absolute inset-0 z-0"
-        initial={{ opacity: 0, scale: 1.1 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 1, ease: "easeOut" }}
-      >
-        <img
-          src={heroImage}
-          alt="FutureWise Edventures"
-          className="w-full h-full object-cover"
+      {/* Silk Animated Background */}
+      <div className="absolute inset-0 z-0 w-full h-full">
+        <Silk
+          speed={5}
+          scale={1}
+          color="#8B7F9A"
+          noiseIntensity={1.5}
+          rotation={0}
         />
-        <div className="absolute inset-0 bg-background/90"></div>
-      </motion.div>
+        <div className="absolute inset-0 bg-background/40"></div>
+      </div>
 
       {/* Content */}
       <div className="container mx-auto px-4 relative z-10">
