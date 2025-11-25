@@ -1,11 +1,38 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { useLocation } from "react-router-dom";
 import { Instagram } from "lucide-react";
 import { fadeInUp, staggerContainer, staggerItem } from "@/lib/animations";
 
 const Footer = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const location = useLocation();
+
+  // Determine which logo to use based on current route (same logic as Navigation)
+  const getLogoPath = () => {
+    const path = location.pathname.toLowerCase();
+    if (path === "/xskills" || path === "/xskills/") {
+      return new URL("../assets/fawa xskill.png", import.meta.url).href;
+    } else if (path === "/devstudio" || path === "/devstudio/") {
+      return new URL("../assets/fawa devstudio.png", import.meta.url).href;
+    } else if (path === "/connectly" || path === "/connectly/") {
+      return new URL("../assets/fawa connectly.png", import.meta.url).href;
+    }
+    return new URL("../assets/fawa home.png", import.meta.url).href;
+  };
+
+  const getLogoAlt = () => {
+    const path = location.pathname.toLowerCase();
+    if (path === "/xskills" || path === "/xskills/") {
+      return "Xskills by FutureWise Edventures";
+    } else if (path === "/devstudio" || path === "/devstudio/") {
+      return "DevStudio by FutureWise Edventures";
+    } else if (path === "/connectly" || path === "/connectly/") {
+      return "Connectly by FutureWise Edventures";
+    }
+    return "FutureWise Edventures";
+  };
 
   return (
     <motion.footer 
@@ -27,8 +54,8 @@ const Footer = () => {
             variants={staggerItem}
           >
             <img 
-              src={new URL("../assets/logo.png", import.meta.url).href} 
-              alt="FutureWise Edventures" 
+              src={getLogoPath()} 
+              alt={getLogoAlt()} 
               className="h-8 w-8 object-contain"
             />
             <span className="text-lg font-bold">FutureWise Edventures</span>

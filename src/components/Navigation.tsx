@@ -118,7 +118,7 @@ const Navigation = () => {
               whileTap={{ scale: 0.95 }}
             >
               <Button onClick={() => window.open('https://wa.me/917034365083', '_blank')}>
-                Get Started
+                Contact Us
               </Button>
             </motion.div>
           </motion.div>
@@ -209,7 +209,7 @@ const Navigation = () => {
                         setIsMobileMenuOpen(false);
                       }}
                     >
-                      Get Started
+                      Contact Us
                     </Button>
                   </motion.div>
                 </motion.div>

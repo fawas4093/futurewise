@@ -2,7 +2,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Target, Wrench, Rocket, CheckCircle2, Lightbulb, Award, Users } from "lucide-react";
+import { Target, Wrench, Rocket, CheckCircle2, Lightbulb, Award, Users, Mail, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const About = () => {
@@ -236,57 +236,36 @@ const About = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-32 bg-background relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-muted/50 to-transparent" />
-        <div className="container mx-auto px-4 relative">
-          <div className="max-w-5xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div className="animate-fade-in">
-                <h2 className="text-5xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
-                  Let's Start Your Journey
-                </h2>
-                <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                  Ready to transform your educational journey? Connect with us and discover how we can help you achieve your goals.
-                </p>
-                <Button 
-                  size="lg"
-                  className="h-14 px-8 text-base font-semibold shadow-lg hover:shadow-xl transition-shadow"
-                  onClick={() => window.open('https://wa.me/917034365083', '_blank')}
+      <section id="contact" className="py-32 relative overflow-hidden bg-primary">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,rgba(255,255,255,0.2),transparent_50%),radial-gradient(circle_at_80%_80%,rgba(255,255,255,0.15),transparent_50%)]" />
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-5xl md:text-7xl font-bold text-white mb-12 leading-tight">
+              Contact
+            </h2>
+            <p className="text-xl md:text-2xl text-white/90 mb-12 leading-relaxed">
+              For collaborations, projects, or internships:
+            </p>
+            
+            <div className="flex flex-col md:flex-row gap-6 justify-center items-center mb-8">
+              <div className="flex items-center gap-3 bg-white/10 backdrop-blur-md rounded-xl px-6 py-4 border border-white/20">
+                <Mail className="h-6 w-6 text-white" />
+                <a
+                  href="mailto:connectfuturewise@gmail.com"
+                  className="text-lg md:text-xl text-white hover:underline"
                 >
-                  Get in Touch
-                </Button>
+                  connectfuturewise@gmail.com
+                </a>
               </div>
               
-              <div className="animate-fade-in" style={{ animationDelay: "0.2s" }}>
-                <Card className="bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-sm border-border hover:border-primary/30 transition-all duration-300">
-                  <CardHeader>
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className="bg-gradient-to-br from-primary to-secondary p-3 rounded-xl">
-                        <Users className="h-6 w-6 text-white" />
-                      </div>
-                      <div>
-                        <CardTitle className="text-2xl">Mr. Mohammed Shefin CT</CardTitle>
-                        <CardDescription className="text-base">Founder & CEO</CardDescription>
-                      </div>
-                    </div>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
-                    <div className="space-y-3">
-                      <div className="flex items-center gap-3 p-3 rounded-lg bg-muted/50">
-                        <div className="w-2 h-2 bg-primary rounded-full" />
-                        <span className="text-foreground font-medium">+91 70343 65083</span>
-                      </div>
-                      <div className="flex items-center gap-3 p-3 rounded-lg bg-muted/50">
-                        <div className="w-2 h-2 bg-secondary rounded-full" />
-                        <span className="text-foreground font-medium">+91 73066 41423</span>
-                      </div>
-                      <div className="flex items-center gap-3 p-3 rounded-lg bg-muted/50">
-                        <div className="w-2 h-2 bg-accent rounded-full" />
-                        <span className="text-foreground font-medium text-sm">connectfuturewise@gmail.com</span>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
+              <div className="flex items-center gap-3 bg-white/10 backdrop-blur-md rounded-xl px-6 py-4 border border-white/20">
+                <Phone className="h-6 w-6 text-white" />
+                <a
+                  href="tel:+917034365083"
+                  className="text-lg md:text-xl text-white hover:underline"
+                >
+                  +91 70343 65083
+                </a>
               </div>
             </div>
           </div>

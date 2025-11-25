@@ -4,7 +4,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Users2, Briefcase, FolderKanban, Trophy, TrendingUp, Building2, GraduationCap, Zap } from "lucide-react";
+import { Users2, Briefcase, FolderKanban, Trophy, TrendingUp, Building2, GraduationCap, Zap, Mail, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 import { fadeInUp, staggerContainer, staggerItem } from "@/lib/animations";
 
@@ -345,7 +345,7 @@ const Connectly = () => {
       </section>
 
 
-      {/* CTA Section */}
+      {/* Contact Section */}
       <section className="py-32 relative overflow-hidden" style={{ backgroundColor: '#8F0B13' }}>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,rgba(255,255,255,0.2),transparent_50%),radial-gradient(circle_at_80%_80%,rgba(255,255,255,0.15),transparent_50%)]" />
         <div className="container mx-auto px-4 relative z-10">
@@ -356,45 +356,44 @@ const Connectly = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-5xl md:text-7xl font-bold text-white mb-8 leading-tight">
-              Join Connectly<br />Today
+            <h2 className="text-5xl md:text-7xl font-bold text-white mb-12 leading-tight">
+              Contact
             </h2>
             <p className="text-xl md:text-2xl text-white/90 mb-12 leading-relaxed">
-              Where innovation meets opportunity. Start collaborating, creating, and conquering your future.
+              For collaborations, projects, or internships:
             </p>
+            
             <motion.div 
-              className="flex flex-wrap gap-4 justify-center"
+              className="flex flex-col md:flex-row gap-6 justify-center items-center mb-8"
               variants={staggerContainer}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
             >
-              <motion.div variants={staggerItem}>
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
+              <motion.div 
+                variants={staggerItem}
+                className="flex items-center gap-3 bg-white/10 backdrop-blur-md rounded-xl px-6 py-4 border border-white/20"
+              >
+                <Mail className="h-6 w-6 text-white" />
+                <a
+                  href="mailto:connectfuturewise@gmail.com"
+                  className="text-lg md:text-xl text-white hover:underline"
                 >
-                  <Button 
-                    size="lg" 
-                    className="bg-white hover:bg-white/90 shadow-2xl h-14 px-8 text-base font-semibold"
-                    style={{ color: '#8F0B13' }}
-                    onClick={() => window.open('https://wa.me/917034365083', '_blank')}
-                  >
-                    Join Now
-                  </Button>
-                </motion.div>
+                  connectfuturewise@gmail.com
+                </a>
               </motion.div>
-              <motion.div variants={staggerItem}>
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
+              
+              <motion.div 
+                variants={staggerItem}
+                className="flex items-center gap-3 bg-white/10 backdrop-blur-md rounded-xl px-6 py-4 border border-white/20"
+              >
+                <Phone className="h-6 w-6 text-white" />
+                <a
+                  href="tel:+917034365083"
+                  className="text-lg md:text-xl text-white hover:underline"
                 >
-                  <Link to="/xskills">
-                    <Button size="lg" className="bg-white/10 backdrop-blur-md text-white border border-white/20 hover:bg-white/20 h-14 px-8 text-base font-semibold">
-                      Explore Xskills
-                    </Button>
-                  </Link>
-                </motion.div>
+                  +91 70343 65083
+                </a>
               </motion.div>
             </motion.div>
           </motion.div>
