@@ -23,6 +23,7 @@ const Navigation = () => {
     { name: "Xskills", path: "/xskills" },
     { name: "DevStudio", path: "/devstudio" },
     { name: "Connectly", path: "/connectly" },
+    { name: "Testimonials", path: "/testimonials" },
   ];
 
   // Determine which logo to use based on current route

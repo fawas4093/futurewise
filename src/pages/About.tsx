@@ -2,7 +2,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Target, Wrench, Rocket, CheckCircle2, Lightbulb, Award, Users, Mail, Phone } from "lucide-react";
+import { Target, Wrench, Rocket, CheckCircle2, Lightbulb, Award, Users } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const About = () => {
@@ -230,43 +230,6 @@ const About = () => {
                   Join Connectly
                 </Button>
               </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Section */}
-      <section id="contact" className="py-32 relative overflow-hidden bg-primary">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,rgba(255,255,255,0.2),transparent_50%),radial-gradient(circle_at_80%_80%,rgba(255,255,255,0.15),transparent_50%)]" />
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-5xl md:text-7xl font-bold text-white mb-12 leading-tight">
-              Contact
-            </h2>
-            <p className="text-xl md:text-2xl text-white/90 mb-12 leading-relaxed">
-              For collaborations, projects, or internships:
-            </p>
-            
-            <div className="flex flex-col md:flex-row gap-6 justify-center items-center mb-8">
-              <div className="flex items-center gap-3 bg-white/10 backdrop-blur-md rounded-xl px-6 py-4 border border-white/20">
-                <Mail className="h-6 w-6 text-white" />
-                <a
-                  href="mailto:connectfuturewise@gmail.com"
-                  className="text-lg md:text-xl text-white hover:underline"
-                >
-                  connectfuturewise@gmail.com
-                </a>
-              </div>
-              
-              <div className="flex items-center gap-3 bg-white/10 backdrop-blur-md rounded-xl px-6 py-4 border border-white/20">
-                <Phone className="h-6 w-6 text-white" />
-                <a
-                  href="tel:+917034365083"
-                  className="text-lg md:text-xl text-white hover:underline"
-                >
-                  +91 70343 65083
-                </a>
-              </div>
             </div>
           </div>
         </div>
