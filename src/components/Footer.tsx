@@ -112,7 +112,7 @@ const Footer = () => {
                 <MapPin className="h-5 w-5 text-gray-600 mt-0.5 flex-shrink-0" />
                 <div className="text-sm text-gray-600 leading-relaxed">
                   <p>FutureWise Edventures Private Limited</p>
-                  <p>Company Number: [Company Number]</p>
+                  <p>CIN Number: [U85499KL2025PTC096615]</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">

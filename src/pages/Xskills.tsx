@@ -1,5 +1,5 @@
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -13,9 +13,51 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
+  type CarouselApi,
 } from "@/components/ui/carousel";
 
 const Xskills = () => {
+  const [api, setApi] = useState<CarouselApi>();
+  const [isPlaying, setIsPlaying] = useState(true);
+
+  // Auto-play functionality
+  useEffect(() => {
+    if (!api) {
+      return;
+    }
+
+    let autoplayInterval: NodeJS.Timeout;
+
+    if (isPlaying) {
+      autoplayInterval = setInterval(() => {
+        api.scrollNext();
+      }, 5000); // Auto-scroll every 5 seconds
+    }
+
+    // Pause on user interaction
+    const handlePointerDown = () => {
+      setIsPlaying(false);
+    };
+
+    const handlePointerUp = () => {
+      // Resume after a delay
+      setTimeout(() => {
+        setIsPlaying(true);
+      }, 3000);
+    };
+
+    api.on("pointerDown", handlePointerDown);
+    api.on("pointerUp", handlePointerUp);
+
+    return () => {
+      if (autoplayInterval) {
+        clearInterval(autoplayInterval);
+      }
+      api.off("pointerDown", handlePointerDown);
+      api.off("pointerUp", handlePointerUp);
+    };
+  }, [api, isPlaying]);
+
   const mentorshipTracks = [
     {
       icon: Sparkles,
@@ -109,7 +151,7 @@ const Xskills = () => {
       name: "Adheena",
       role: "Data Analytics Intern",
       image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Adheena",
-      rating: 5,
+      rating: 4,
       review: "Hey, you're doing awesome! Your dedication and enthusiasm during the internship are really impressive. Your growth and progress are amazing with this age. Keep working 💪 on refining your skills. You're growing both academically and personally. This internship has been an invaluable experience, providing me with hands-on skills, industry insights, and a deeper understanding of my field."
     },
     {
@@ -117,20 +159,20 @@ const Xskills = () => {
       role: "Bvoc IT, Christ College (Autonomous), Irinjalakuda",
       image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Abdul",
       rating: 5,
-      review: "The workshop was a great experience in my career journey through my seniors who conducted the workshop i found out that we should put 100% effort to what we do so the output will be the best. As i have studied excel in my 12th power BI was kinda more simple from outside but the things got complicated but still i have managed to make the dashboard. So thank you for providing a workshop for power BI with limited time shefin bro gave me a chance to discover a small part of data analysis through Power BI."
+      review: "The workshop was a great experience in my career journey. It taught me the importance of giving 100% effort to achieve the best results. Though Power BI felt simple at first, it became challenging, and I still managed to create a dashboard. Thanks to Shefin for the limited-time workshop and for giving me an opportunity to explore data analysis through Power BI."
     },
     {
       name: "Riya Philomina Shony",
       role: "BSc Computer Science, Christ College (Autonomous), Irinjalakuda",
       image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Riya",
       rating: 5,
-      review: "I actually had no idea what power BI was. I had just heard about here and there and many people talking about how it is the most in demand technology as of now. So when I saw this workshop I decided to join for it. It was a wonderful session. I now have an idea about what the technology is and how it can very helpful it creating reports quickly and effectively without having to waste a lot of time. Overall it was a great session and also had lots of fun."
+      review: "I had no idea about Power BI before joining this workshop, but it turned out to be a wonderful experience. The session helped me understand how useful the technology is for creating reports quickly and effectively. Overall, it was a great learning experience and a lot of fun."
     },
     {
       name: "Anupama KR",
       role: "BSc Physics, Christ College (Autonomous), Irinjalakuda",
       image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Anupama",
-      rating: 5,
+      rating: 3,
       review: "The data visualization workshop was highly informative and hands-on, with a great focus on Tableau, Excel, and Power BI. It provided practical skills in creating impactful visuals and understanding the strengths of each tool. Big thanks to Shefin for an engaging and insightful session."
     },
     {
@@ -401,14 +443,19 @@ const Xskills = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <Carousel
-              opts={{
-                align: "start",
-                loop: true,
-                dragFree: true,
-              }}
-              className="w-full max-w-6xl mx-auto"
+            <div
+              onMouseEnter={() => setIsPlaying(false)}
+              onMouseLeave={() => setIsPlaying(true)}
             >
+              <Carousel
+                setApi={setApi}
+                opts={{
+                  align: "start",
+                  loop: true,
+                  dragFree: true,
+                }}
+                className="w-full max-w-6xl mx-auto"
+              >
               <CarouselContent className="-ml-2 md:-ml-4">
                 {testimonials.map((testimonial, index) => (
                   <CarouselItem key={index} className="pl-2 md:pl-4 basis-full md:basis-1/2 lg:basis-1/3">
@@ -443,21 +490,13 @@ const Xskills = () => {
                               </div>
                             </div>
                             
-                            <div className="flex items-center gap-4 pt-4 border-t border-border flex-shrink-0">
-                              <img
-                                src={testimonial.image}
-                                alt={testimonial.name}
-                                className="h-12 w-12 rounded-full object-cover border-2 flex-shrink-0"
-                                style={{ borderColor: 'rgba(10, 65, 116, 0.2)' }}
-                              />
-                              <div className="min-w-0 flex-1">
-                                <h4 className="font-semibold text-foreground text-sm md:text-base truncate">
-                                  {testimonial.name}
-                                </h4>
-                                <p className="text-xs md:text-sm text-muted-foreground line-clamp-2">
-                                  {testimonial.role}
-                                </p>
-                              </div>
+                            <div className="pt-4 border-t border-border flex-shrink-0">
+                              <h4 className="font-semibold text-foreground text-sm md:text-base truncate mb-1">
+                                {testimonial.name}
+                              </h4>
+                              <p className="text-xs md:text-sm text-muted-foreground line-clamp-2">
+                                {testimonial.role}
+                              </p>
                             </div>
                           </CardContent>
                         </motion.div>
@@ -466,9 +505,16 @@ const Xskills = () => {
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <CarouselPrevious className="hidden md:flex -left-12 lg:-left-16 h-10 w-10" />
-              <CarouselNext className="hidden md:flex -right-12 lg:-right-16 h-10 w-10" />
+              <CarouselPrevious 
+                className="hidden md:flex -left-12 lg:-left-16 h-10 w-10"
+                onClick={() => setIsPlaying(false)}
+              />
+              <CarouselNext 
+                className="hidden md:flex -right-12 lg:-right-16 h-10 w-10"
+                onClick={() => setIsPlaying(false)}
+              />
             </Carousel>
+            </div>
           </motion.div>
         </div>
       </section>
