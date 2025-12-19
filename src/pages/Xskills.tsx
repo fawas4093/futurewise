@@ -4,9 +4,16 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Sparkles, Rocket, Trophy, BarChart3, Box, Cpu, Code, CheckCircle2, Award, Users2, TrendingUp } from "lucide-react";
+import { Sparkles, Rocket, Trophy, BarChart3, Box, Cpu, Code, CheckCircle2, Award, Users2, TrendingUp, Star, Quote } from "lucide-react";
 import { Link } from "react-router-dom";
 import { fadeInUp, staggerContainer, staggerItem } from "@/lib/animations";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const Xskills = () => {
   const mentorshipTracks = [
@@ -88,6 +95,51 @@ const Xskills = () => {
       title: "Portfolio & Career Development",
       description: "Build tangible proof of your skills and launch your career",
     },
+  ];
+
+  const testimonials = [
+    {
+      name: "Archana PR",
+      role: "B Tech EEE Student",
+      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Archana",
+      rating: 5,
+      review: "This was a nice class. At first I have no idea about Power BI, only knows this is need for data Analysing field. But now understood the basics from the same. I will try to attend more classes about this field. Thank you!! For this session and way of presentation and clearing my doubts.🤗"
+    },
+    {
+      name: "Adheena",
+      role: "Data Analytics Intern",
+      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Adheena",
+      rating: 5,
+      review: "Hey, you're doing awesome! Your dedication and enthusiasm during the internship are really impressive. Your growth and progress are amazing with this age. Keep working 💪 on refining your skills. You're growing both academically and personally. This internship has been an invaluable experience, providing me with hands-on skills, industry insights, and a deeper understanding of my field."
+    },
+    {
+      name: "Abdul Azeem",
+      role: "Bvoc IT, Christ College (Autonomous), Irinjalakuda",
+      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Abdul",
+      rating: 5,
+      review: "The workshop was a great experience in my career journey through my seniors who conducted the workshop i found out that we should put 100% effort to what we do so the output will be the best. As i have studied excel in my 12th power BI was kinda more simple from outside but the things got complicated but still i have managed to make the dashboard. So thank you for providing a workshop for power BI with limited time shefin bro gave me a chance to discover a small part of data analysis through Power BI."
+    },
+    {
+      name: "Riya Philomina Shony",
+      role: "BSc Computer Science, Christ College (Autonomous), Irinjalakuda",
+      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Riya",
+      rating: 5,
+      review: "I actually had no idea what power BI was. I had just heard about here and there and many people talking about how it is the most in demand technology as of now. So when I saw this workshop I decided to join for it. It was a wonderful session. I now have an idea about what the technology is and how it can very helpful it creating reports quickly and effectively without having to waste a lot of time. Overall it was a great session and also had lots of fun."
+    },
+    {
+      name: "Anupama KR",
+      role: "BSc Physics, Christ College (Autonomous), Irinjalakuda",
+      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Anupama",
+      rating: 5,
+      review: "The data visualization workshop was highly informative and hands-on, with a great focus on Tableau, Excel, and Power BI. It provided practical skills in creating impactful visuals and understanding the strengths of each tool. Big thanks to Shefin for an engaging and insightful session."
+    },
+    {
+      name: "Muhammed Aslam",
+      role: "Computer Science, Majlis Arts and Science College",
+      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Aslam",
+      rating: 5,
+      review: "Sir, we are glad to have a mentor like you, who makes us feel that we can conquer the impossible and turn it into possible. You clearly define a unique personality. The words you spoke deeply relay in our minds as powerful encouragement towards us."
+    }
   ];
 
   return (
@@ -321,6 +373,102 @@ const Xskills = () => {
                 </Card>
               </motion.div>
             ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-32 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <motion.div 
+            className="text-center mb-20"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
+              What Our Students Say
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Real stories from students who transformed their careers with Xskills
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+                dragFree: true,
+              }}
+              className="w-full max-w-6xl mx-auto"
+            >
+              <CarouselContent className="-ml-2 md:-ml-4">
+                {testimonials.map((testimonial, index) => (
+                  <CarouselItem key={index} className="pl-2 md:pl-4 basis-full md:basis-1/2 lg:basis-1/3">
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: index * 0.1 }}
+                    >
+                      <Card className="bg-card/80 backdrop-blur-sm border-border hover:border-primary/30 transition-all duration-300 h-full flex flex-col min-h-[400px] md:min-h-[450px]">
+                        <motion.div
+                          className="flex flex-col h-full"
+                          whileHover={{ y: -5, scale: 1.02 }}
+                          transition={{ duration: 0.3 }}
+                        >
+                          <CardContent className="p-6 md:p-8 flex flex-col h-full">
+                            <div className="flex items-center gap-1 mb-4 flex-shrink-0">
+                              {[...Array(testimonial.rating)].map((_, i) => (
+                                <Star
+                                  key={i}
+                                  className="h-4 w-4 fill-yellow-400 text-yellow-400"
+                                />
+                              ))}
+                            </div>
+                            
+                            <div className="flex-1 flex flex-col mb-6 min-h-0">
+                              <Quote className="h-8 w-8 text-primary/20 mb-4 flex-shrink-0" />
+                              <div className="flex-1 overflow-y-auto">
+                                <p className="text-muted-foreground leading-relaxed text-sm md:text-base">
+                                  "{testimonial.review}"
+                                </p>
+                              </div>
+                            </div>
+                            
+                            <div className="flex items-center gap-4 pt-4 border-t border-border flex-shrink-0">
+                              <img
+                                src={testimonial.image}
+                                alt={testimonial.name}
+                                className="h-12 w-12 rounded-full object-cover border-2 flex-shrink-0"
+                                style={{ borderColor: 'rgba(10, 65, 116, 0.2)' }}
+                              />
+                              <div className="min-w-0 flex-1">
+                                <h4 className="font-semibold text-foreground text-sm md:text-base truncate">
+                                  {testimonial.name}
+                                </h4>
+                                <p className="text-xs md:text-sm text-muted-foreground line-clamp-2">
+                                  {testimonial.role}
+                                </p>
+                              </div>
+                            </div>
+                          </CardContent>
+                        </motion.div>
+                      </Card>
+                    </motion.div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="hidden md:flex -left-12 lg:-left-16 h-10 w-10" />
+              <CarouselNext className="hidden md:flex -right-12 lg:-right-16 h-10 w-10" />
+            </Carousel>
           </motion.div>
         </div>
       </section>

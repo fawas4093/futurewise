@@ -9,7 +9,6 @@ import About from "./pages/About";
 import Xskills from "./pages/Xskills";
 import Connectly from "./pages/Connectly";
 import DevStudio from "./pages/DevStudio";
-import Testimonials from "./pages/Testimonials";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -26,7 +25,6 @@ const App = () => (
           <Route path="/xskills" element={<Xskills />} />
           <Route path="/connectly" element={<Connectly />} />
           <Route path="/devstudio" element={<DevStudio />} />
-          <Route path="/testimonials" element={<Testimonials />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
